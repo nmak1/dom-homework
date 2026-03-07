@@ -7,11 +7,16 @@
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "lint": "eslint packages src",
-    "test": "jest --passWithNoTests",
-    "coverage": "jest --coverage --passWithNoTests",
+    "test": "jest",
+    "coverage": "jest --coverage",
     "deploy": "gh-pages -d dist"
   },
-  "keywords": ["dom", "homework", "game", "table"],
+  "keywords": [
+    "dom",
+    "homework",
+    "game",
+    "table"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -37,6 +42,18 @@
   },
   "jest": {
     "testEnvironment": "jsdom",
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "testMatch": [
+      "**/__tests__/**/*.js?(x)",
+      "**/?(*.)+(spec|test).js?(x)"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ],
     "moduleNameMapper": {
       "\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/styleMock.js",
       "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/__mocks__/fileMock.js"
