@@ -4,16 +4,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     main: './src/index.js',
-    'gnom-game': './packages/gnom-game/src/index.js',
+    // 'gnom-game': './packages/gnom-game/src/index.js',
     'movie-table-data': './packages/movie-table-data/src/index.js',
     'movie-table-memory': './packages/movie-table-memory/src/index.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
+    filename: '[name].[contenthash].js',
     clean: true
   },
   module: {
@@ -42,10 +42,6 @@ module.exports = {
         generator: {
           filename: 'images/[name][ext]'
         }
-      },
-      {
-        test: /\.json$/,
-        type: 'json'
       }
     ]
   },
@@ -55,11 +51,11 @@ module.exports = {
       filename: 'index.html',
       chunks: ['main']
     }),
-    new HtmlWebpackPlugin({
-      template: './packages/gnom-game/src/index.html',
-      filename: 'gnom-game/index.html',
-      chunks: ['gnom-game']
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: './packages/gnom-game/src/index.html',
+    //   filename: 'gnom-game/index.html',
+    //   chunks: ['gnom-game']
+    // }),
     new HtmlWebpackPlugin({
       template: './packages/movie-table-data/src/index.html',
       filename: 'movie-table-data/index.html',
@@ -71,7 +67,7 @@ module.exports = {
       chunks: ['movie-table-memory']
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: '[name].[contenthash].css'
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -80,14 +76,5 @@ module.exports = {
         { from: 'packages/movie-table-memory/src/data', to: 'data', noErrorOnMissing: true }
       ]
     })
-  ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist')
-    },
-    port: 8081,
-    open: true,
-    hot: true,
-    historyApiFallback: true
-  }
+  ]
 };
