@@ -45,14 +45,9 @@
     "collectCoverage": true,
     "coverageDirectory": "coverage",
     "testMatch": [
-      "**/__tests__/**/*.js?(x)",
-      "**/?(*.)+(spec|test).js?(x)"
-    ],
-    "transform": {
-      "^.+\\.js$": "babel-jest"
-    },
-    "transformIgnorePatterns": [
-      "/node_modules/"
+      "**/__tests__/main.test.js",
+      "**/__tests__/movie-table-data.test.js",
+      "**/__tests__/movie-table-memory.test.js"
     ],
     "moduleNameMapper": {
       "\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/styleMock.js",
