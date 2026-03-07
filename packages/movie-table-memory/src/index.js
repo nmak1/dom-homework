@@ -9,7 +9,7 @@ class MovieTableInMemory {
     this.timerElement = document.getElementById('timer');
     this.movieCountElement = document.getElementById('movieCount');
     this.avgRatingElement = document.getElementById('avgRating');
-    
+
     this.sortFields = ['id', 'title', 'year', 'imdb'];
     this.currentSortIndex = 0;
     this.ascending = true;
@@ -30,7 +30,7 @@ class MovieTableInMemory {
 
   renderTable() {
     this.tableBody.innerHTML = '';
-    this.movies.forEach(movie => {
+    this.movies.forEach((movie) => {
       const row = document.createElement('tr');
       row.dataset.id = movie.id;
       row.dataset.title = movie.title;
@@ -51,7 +51,10 @@ class MovieTableInMemory {
       this.movieCountElement.textContent = this.movies.length;
     }
     if (this.avgRatingElement) {
-      const avgRating = this.movies.reduce((sum, movie) => sum + movie.imdb, 0) / this.movies.length;
+      const avgRating = this.movies.reduce(
+        (sum, movie) => sum + movie.imdb,
+        0,
+      ) / this.movies.length;
       this.avgRatingElement.textContent = avgRating.toFixed(2);
     }
   }
@@ -74,7 +77,7 @@ class MovieTableInMemory {
   }
 
   updateActiveHeader(field, ascending) {
-    document.querySelectorAll('th.sortable').forEach(th => {
+    document.querySelectorAll('th.sortable').forEach((th) => {
       th.classList.remove('active');
       const arrow = th.querySelector('.arrow');
       if (arrow) arrow.textContent = '';
@@ -90,7 +93,12 @@ class MovieTableInMemory {
 
   updateSortIndicator() {
     const field = this.sortFields[this.currentSortIndex];
-    const fieldNames = { id: 'ID', title: 'названию', year: 'году', imdb: 'рейтингу' };
+    const fieldNames = {
+      id: 'ID',
+      title: 'названию',
+      year: 'году',
+      imdb: 'рейтингу',
+    };
     const direction = this.ascending ? 'возрастание' : 'убывание';
     if (this.sortIndicator) {
       this.sortIndicator.textContent = `${fieldNames[field]} (${direction})`;
@@ -148,11 +156,11 @@ class MovieTableInMemory {
   }
 
   addSortListeners() {
-    document.querySelectorAll('th.sortable').forEach(th => {
-      th.addEventListener('click', (e) => {
+    document.querySelectorAll('th.sortable').forEach((th) => {
+      th.addEventListener('click', () => {
         const field = th.dataset.sort;
         const fieldIndex = this.sortFields.indexOf(field);
-        
+
         if (fieldIndex === this.currentSortIndex) {
           this.ascending = !this.ascending;
         } else {
