@@ -1,0 +1,35 @@
+# Зависимости
+node_modules/
+package-lock.json
+yarn.lock
+
+# Сборка
+dist/
+build/
+coverage/
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Логи и env
+*.log
+.env
+.env.local
+.env.*.local
+
+# Редакторы
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Тесты
+coverage/
+.nyc_output/
+
+# Временные файлы
+tmp/
+temp/

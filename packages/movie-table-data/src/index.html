@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Table with Data Attributes</title>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Movie Database (Data Attributes)</h1>
+        <div class="sort-indicator">Сортировка: <span id="currentSort">ID (возрастание)</span></div>
+        <table class="movies-table">
+            <thead>
+                <tr>
+                    <th data-sort="id" class="sortable active">ID <span class="arrow">↑</span></th>
+                    <th data-sort="title" class="sortable">Title <span class="arrow"></span></th>
+                    <th data-sort="year" class="sortable">Year <span class="arrow"></span></th>
+                    <th data-sort="imdb" class="sortable">IMDb <span class="arrow"></span></th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+        <a href="/" class="back-link">← На главную</a>
+    </div>
+    <!-- Добавим комментарий для проверки, что HTML загружается -->
+    <!-- HTML файл загружен правильно -->
+</body>
+</html>
