@@ -1,4 +1,4 @@
-import MovieTableDataAttributes from '../packages/movie-table-data/src/index';
+import MovieTableDataAttributes from '../packages/movie-table-data/src/index.js';
 
 jest.mock('../packages/movie-table-data/src/data/movies.json', () => [
   { id: 1, title: 'Test Movie', year: 2020, imdb: 8.5 }

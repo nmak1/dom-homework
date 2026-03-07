@@ -1,4 +1,4 @@
-import GnomGame from '../packages/gnom-game/src/index';
+import GnomGame from '../packages/gnom-game/src/index.js';
 
 describe('GnomGame', () => {
   beforeAll(() => {

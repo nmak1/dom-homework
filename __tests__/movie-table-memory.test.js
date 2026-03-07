@@ -1,4 +1,4 @@
-import MovieTableInMemory from '../packages/movie-table-memory/src/index';
+import MovieTableInMemory from '../packages/movie-table-memory/src/index.js';
 
 jest.mock('../packages/movie-table-memory/src/data/movies.json', () => [
   { id: 1, title: 'Test Movie', year: 2020, imdb: 8.5 }
