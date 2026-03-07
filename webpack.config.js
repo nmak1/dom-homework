@@ -7,7 +7,7 @@ module.exports = {
   mode: 'production',
   entry: {
     main: './src/index.js',
-    // 'gnom-game': './packages/gnom-game/src/index.js',
+    'gnom-game': './packages/gnom-game/src/index.js',
     'movie-table-data': './packages/movie-table-data/src/index.js',
     'movie-table-memory': './packages/movie-table-memory/src/index.js'
   },
@@ -51,11 +51,11 @@ module.exports = {
       filename: 'index.html',
       chunks: ['main']
     }),
-    // new HtmlWebpackPlugin({
-    //   template: './packages/gnom-game/src/index.html',
-    //   filename: 'gnom-game/index.html',
-    //   chunks: ['gnom-game']
-    // }),
+    new HtmlWebpackPlugin({
+      template: './packages/gnom-game/src/index.html',
+      filename: 'gnom-game/index.html',
+      chunks: ['gnom-game']
+    }),
     new HtmlWebpackPlugin({
       template: './packages/movie-table-data/src/index.html',
       filename: 'movie-table-data/index.html',
