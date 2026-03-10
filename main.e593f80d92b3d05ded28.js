@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("Главная страница загружена"),document.addEventListener("DOMContentLoaded",function(){console.log("DOM полностью загружен"),document.querySelectorAll("a").forEach(function(e){e.addEventListener("mouseenter",function(){e.style.opacity="0.8"}),e.addEventListener("mouseleave",function(){e.style.opacity="1"})})})})();
