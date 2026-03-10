@@ -8,8 +8,16 @@
 <body>
     <div class="container">
         <h1>👾 Gnom Game</h1>
+        <div class="game-info">
+            <div class="score">Счет: <span id="score">0</span></div>
+            <div class="misses">Пропущено: <span id="misses">0</span>/5</div>
+            <div class="game-status" id="gameStatus"></div>
+        </div>
         <div class="game-board"></div>
-        <p>Гном перемещается каждую секунду</p>
+        <div class="game-controls">
+            <button id="restartBtn" class="restart-btn">Новая игра</button>
+        </div>
+        <p class="instruction">Кликните по гоблину молотком, чтобы заработать очки!</p>
         <a href="/" class="back-link">← На главную</a>
     </div>
 </body>
